@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sidebar menu */
+
+#sidebar {
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+}
+
+#trade-mark {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+#trade-mark svg {
+    height: 50px;
+    width: 50px;
+}
+
+#trade-mark p {
+    font-family: "Silkscreen", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 26px;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    text-transform: capitalize;
+    margin: 20px 0;
+}
+
+.menu svg {
+    height: 30px;
+    width: 30px;
+}
+
+.menu.top {
+    margin-bottom: 60px;
+}
