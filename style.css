@@ -1,0 +1,341 @@
+/* Side bar dashboard */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jura:wght@300..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&display=swap');
+
+/* Overall */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jura:wght@300..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", serif;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) 4fr;
+}
+
+/* Side bar */
+
+#sidebar {
+    grid-column: 1 / 2;
+    background-color: lightseagreen;
+    color: white;
+    padding: 10px 20px 30px 20px;
+}
+
+#top {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    column-gap: 15px;
+}
+
+#logo {
+    height: 70px;
+    width: 70px;
+}
+
+
+#top > p {
+    align-self: center;
+    justify-content: start;
+    font-family: Silkscreen, serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+}
+
+
+/* Side bar: Middle section */
+
+#middle {
+    margin: 20px 0 30px 0;
+}
+
+#middle > p {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#middle svg {
+    height: 32px;
+}
+
+/* body column */
+
+#body {
+    grid-column: 2 / 3;
+}
+
+/* Header */
+
+#header {
+    padding: 0 30px;
+}
+
+
+/* Side bar: Bottom section */
+
+#bottom svg {
+    height: 32px;
+}
+
+#bottom > p {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* header-top */
+
+.header-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* search zone */
+
+#search-zone {
+    display: grid;
+    grid-template-columns: minmax(30px, 60px) minmax(400px, 600px);
+    align-items: center;
+}
+
+#magnifyi-glass {
+    height: 30px;
+    width: 30px;
+}
+
+#search-zone input {
+    height: 30px;
+    border-radius: 15px;
+    padding: 0 15px;
+    border: 1px solid lightgray;
+}
+
+
+/* User Profile */
+
+#user-profile {
+    display: grid;
+    grid-template-columns: minmax(30px, 40px) minmax(30px, 40px) minmax(100px, 120px);
+    align-items: center;
+    column-gap: 30px;
+    justify-content: end;
+}
+
+#notification {
+    height: 30px;
+}
+
+#user-profile-icon {
+    height: 50px;
+}
+
+#notification,
+#profile-icon,
+#username {
+    justify-self: center;
+}
+
+/* Header Bottom */
+
+.header-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* welcome */
+
+#welcome {
+    display: grid;
+    grid-template-columns: minmax(60px, 80px) minmax(200px, 300px);
+    align-items: center;
+}
+
+#welcome-profile-icon {
+    height: 60px;
+    width: 60px;
+}
+
+#welcome span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* Action buttons: New, Upload & Share */
+
+#action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 120px));
+    column-gap: 20px;
+    justify-content: end;
+}
+
+#action-buttons input {
+    color: white;
+    border: none;
+    background-color: lightskyblue;
+    padding: 10px 0;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+
+/* Main section */
+
+#main {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    background-color: lightgray;
+}
+
+
+
+/*  Project List */
+
+#project-list {
+    grid-column: 1 / 2;
+    padding: 20px 0;
+}
+
+#project-list > p {
+    padding-left: 30px;
+    margin: 30px 0 10px 0;
+    font-size: 24px;
+}
+
+#cards {
+    /* Internal layout for Github Project List */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, 600px));
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: white;
+    background-color: orange;
+    border-radius: 15px;
+}
+
+
+.card > div {
+    width: 98%;
+    background-color: white;
+    margin-left: auto;
+    padding: 20px;
+    border-radius: 0 15px 15px 0;
+}
+
+.card p:nth-of-type(1) {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.card p:nth-of-type(2) {
+    font-size: 12px;
+}
+
+.card p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.card p:last-child {
+    text-align: right;
+}
+
+.card svg {
+    height: 30px;
+    width: 30px;
+    margin: 0 10px;
+}
+
+
+
+/* Side panel: Announcement & Trending */
+
+aside {
+    grid-column: 2 / 3;
+}
+
+
+/* announcement */
+
+#announcement {
+    padding: 20px 20px 20px 0;
+}
+
+#announcement > p {
+    margin: 30px 0 10px 0;
+    font-size: 24px;
+}
+
+#announcement > div {
+    background-color: white;
+    padding: 0 20px;
+    border-radius: 15px;
+}
+
+.news > p:first-child {
+    padding-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.news > p:last-child {
+    padding-bottom: 20px;
+    font-size: 12px;
+}
+
+.news > p {
+    margin-bottom: 10px;
+}
+
+.news:not(:last-child) {
+    border-bottom: 2px dotted lightskyblue;
+}
+
+
+/* trending */
+
+#trending {
+    padding: 20px 20px 20px 0;
+}
+
+
+#trending > p {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#trending > div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.topic {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.topic svg {
+    height: 50px;
+    width: 50px;
+}
