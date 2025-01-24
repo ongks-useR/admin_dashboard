@@ -1,207 +1,226 @@
+
 /* Side bar dashboard */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jura:wght@300..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* Overall */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jura:wght@300..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&display=swap');
 
 
-/* Styling start here */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Overall */
+
+body {
+    display: grid;
+    grid-template-columns: minmax(350px, 20%) auto;
     font-family: "Roboto Mono", serif;
 }
 
-body {
-    height: 100vh;
+.auto-column {
+    grid-column: 2 / 3;
 }
 
 
-.container {
-    display: grid;
-    grid-template-columns: 350px 4fr;
-}
 
-
-/* Side bar */
+/* sidebar */
 
 .sidebar {
-    /* height: 100vh; */
+
+    /* Refer to body */
     grid-column: 1 / 2;
+
     background-color: lightseagreen;
     color: white;
-
-    /* Internal layout for sidebar */
-    display: grid;
-    grid-template-rows: minmax(100px, 150px) 1fr 1fr;
-}
-
-.top svg {
-    height: 80px;
-    width: 80px;
-}
-
-.top {
-    align-self: self-start;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    column-gap: 15px;
-}
-
-.top p {
     font-family: Silkscreen, serif;
-    font-size: 30px;
+
+    /* Grid to position top, middle and bottom sections */
+    display: grid;
+    align-content: space-between;
 }
 
-.middle,
-.bottom {
+
+.sidebar div:nth-of-type(1) {
+    /* 
+        Top section of sidebar that contains logo and Dashboard
+        Grid to position logo and dashboard.
+    */
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 28px;
     padding: 20px;
 }
 
-.middle > p,
-.bottom > p {
-    display: flex;
-    align-items: center;
-    column-gap: 20px;
-    padding: 20px;
+.sidebar div:not(:nth-of-type(1)) {
+    margin: 50px 0;
 }
 
-
-.middle svg,
-.bottom svg {
-    height: 30px;
-    width: 30px;
-}
-
-
-/* content */
-
-.content {
-    grid-column: 2 / 3;
-    background-color: lightgray;
-}
-
-
-/* Header: Top & Bottom */
-
-.header {
-    background-color: white;
-}
-
-.header-top,
-.header-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 40px;
-}
-
-/* Header: Search box & User profile */
-
-.search-zone {
-    display: flex;
-    column-gap: 20px;
-}
-
-.search-zone svg {
-    height: 30px;
-    width: 30px;
-}
-
-.search-zone input {
-    min-width: 300px;
-    width: 600px;
-    border-radius: 15px;
-    padding: 0 15px;
-    border: 1px solid lightgrey;
-}
-
-
-.user-profile {
-    display: flex;
-    align-items: center;
-    column-gap: 20px;
-}
-
-.user-profile svg:first-of-type {
-    height: 30px;
-    width: 30px;
-}
-
-.user-profile svg:nth-of-type(2) {
+.sidebar div:nth-of-type(1) svg {
     height: 60px;
     width: 60px;
 }
 
-#username {
-    font-weight: bold;
-}
-
-
-/* Navigation bar: Greeting and Action buttons --> New, Upload & Share */
-
-.welcome {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-}
-
-.welcome svg {
-    height: 70px;
-}
-
-.welcome span {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-
-.action-buttons {
+.sidebar div:nth-of-type(2) p,
+.sidebar div:nth-of-type(3) p {
+    /* 
+        Top section of sidebar that contains logo and Dashboard
+        Grid to position logo and dashboard.
+    */
     display: grid;
-    grid-template-columns: repeat(3, minmax(60px, 120px));
+    grid-template-columns: min-content auto;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 20px;
+    padding: 20px 20px 20px 40px;
+}
+
+
+.sidebar div:nth-of-type(2) svg,
+.sidebar div:nth-of-type(3) svg {
+    height: 30px;
+    width: 30px;
+}
+
+
+/* Headear */
+
+.header {
+    padding: 0 30px;
+    font-size: 12px;
+}
+
+.header > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(500px, 50%));
+    column-gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.header span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.search-zone {
+    display: grid;
+    grid-template-columns: min-content auto;
+    column-gap: 15px;
+}
+
+.search-zone input {
+    border-radius: 15px;
+    border: 1px solid lightgray;
+    padding: 0 15px;
+}
+
+.user-profile {
+    display: grid;
+    grid-template-columns: repeat(2, min-content) minmax(min-content, 150px);
+    align-items: center;
+    justify-content: end;
     column-gap: 20px;
 }
 
+.user-profile span {
+    justify-self: center;
+}
+
+.welcome {
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 140px));
+    column-gap: 30px;
+    justify-content: end;
+}
+
 .action-buttons input {
-    padding: 10px 0;
+    background-color: lightskyblue;
     border: none;
-    border-radius: 20px;
-    background-color: rgb(66, 191, 233);
     color: white;
     font-weight: bold;
+    font-size: 14px;
+    padding: 10px 0;
+    border-radius: 20px;
+}
+
+
+.header svg {
+    height: 30px;
+    width: 30px;
+}
+
+#header-profile-icon {
+    height: 50px;
+    width: 50px;
+}
+
+#welcome-profile-icon {
+    height: 70px;
+    width: 70px;
 }
 
 
 /* body */
 
 .body {
+    background-color: rgb(219, 208, 208);
+
+    /* 
+        Grid for project cards and side panel.
+        Side panel contains Announcement and Trendings
+    */
+
     display: grid;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: auto minmax(350px, 500px);
+}
+
+/* For project cards, announcement and trending */
+
+.body > div {
+    padding: 30px 20px;  /* adjust padding */
+    font-size: 12px;
+}
+
+.body > div > p,
+.body > div > div > p {
+    /* 
+        1. Margin bottom for the title: Github Projects, Announcement & Trending
+        2. Font styling
+    */
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 
+/* Project Cards */
 
-/* projects */
+.body > div:nth-of-type(1) > ul {
+    list-style: none;
 
-.projects {
-    grid-column: 1 / 2;
-    padding: 0 10px;
-}
-
-.projects > p {
-    margin: 25px 0 10px 0;
-    font-size: 18px;
-}
-
-.projects > div {
-   
-    /* Internal grid for project cards */
+    /* Grid to position cards into rows and columns */
     display: grid;
-    grid-template-columns: repeat(2, minmax(300px, 450px));
     gap: 20px;
-    justify-content: space-around;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+}
+
+
+.body > div:nth-of-type(1) {
+    grid-column: 1 / 2;
 }
 
 .card {
@@ -210,21 +229,21 @@ body {
 }
 
 .card > div {
+    background-color: white;
     width: 98%;
     height: 100%;
-    background-color: white;
     margin-left: auto;
     border-radius: 0 10px 10px 0;
     padding: 30px 20px;
 }
 
 .card p:first-child {
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 600;
     margin-bottom: 5px;
 }
 
 .card p:nth-of-type(2) {
-    font-size: 12px;
     margin-bottom: 30px;
 }
 
@@ -235,58 +254,74 @@ body {
 .card svg {
     height: 30px;
     width: 30px;
-    margin: 0 5px;
+    margin-left: 20px;
 }
 
 
-/* Side panel for Announcement & Trending */
+/* Announcement & Trending */
 
-aside {
-    grid-column: 2 / 3;
-    padding: 0 20px;
+.body > div:nth-of-type(2) {
+    display: grid;
+    row-gap: 30px;
 }
 
-aside > div > p:first-child {
-    margin: 25px 0 10px 0;
-    font-size: 18px;
-}
-
-
-.topic-list {
+.body > div:nth-of-type(2) ul {
+    list-style: none;
     background-color: white;
     border-radius: 10px;
+}
+
+.body > div:nth-of-type(2) {
+    grid-column: 2 / 3;
+}
+
+.body > div:nth-of-type(2) svg {
+    height: 50px;
+    width: 50px;
+}
+
+
+/* Announcement */
+
+.topic {
+    font-size: 12px;
 }
 
 .topic > div {
     width: 90%;
     margin: 0 auto;
-    border-bottom: 1px dotted lightslategray;
+    border-bottom: 2px dotted grey;
     padding: 20px 0;
 }
 
+.topic:last-child > div {
+    /* remove border of last item */
+    border-bottom: unset;
+}
+
 .topic p:nth-of-type(1) {
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
-.topic p:nth-of-type(2) {
-    font-size: 12px;
-}
 
+/* Trending */
 
 .user-trend {
-    background-color: white;
-    padding: 10px 0;
-    border-radius: 10px;
+    display: grid;
+    row-gap: 20px;
+    padding: 20px;
 }
 
 .user {
-    display: flex;
+    display: grid;
+    grid-template-columns: min-content auto;
     align-items: center;
-    column-gap: 15px;
-    padding: 10px 0 10px 20px;
+    column-gap: 15px;   
 }
 
-.user svg {
-    height: 45px;
-    width: 45px;
+.user > p span:first-of-type {
+    font-weight: bold;
+    color: green;
 }
