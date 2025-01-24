@@ -20,7 +20,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: minmax(300px, 400px) 4fr;
+    grid-template-columns: 350px 4fr;
 }
 
 
@@ -187,10 +187,10 @@ body {
 
 .projects {
     grid-column: 1 / 2;
+    padding: 0 10px;
 }
 
 .projects > p {
-    padding-left: 20px;
     margin: 25px 0 10px 0;
     font-size: 18px;
 }
@@ -243,7 +243,7 @@ body {
 
 aside {
     grid-column: 2 / 3;
-    padding-right: 20px;
+    padding: 0 20px;
 }
 
 aside > div > p:first-child {
